@@ -1,0 +1,368 @@
+
+:root{
+    --primary:#2563eb; --secondary:#1e3a8a;--accent:#06b6d4;
+    --dark:#1f2937;--light:#f8fafc;--white:#ffffff;--card:#120653bb;
+}
+
+*{
+    margin:0;padding:0;box-sizing:border-box;font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:var(--light);color:var(--dark);line-height:1.6;
+}
+.logo{
+    display: flex;align-items: center;gap: 12px;font-size: 1.5rem;
+    font-weight: bold;color: var(--primary);
+}
+
+.logo img{
+    width: 55px;height: 55px;object-fit: cover;
+    border-radius: 50%;border: 2px solid var(--primary);background: #fff;
+}
+#titlenavbar{
+
+    font-size:1.2rem;
+    line-height:1.3;
+}
+
+/* Para celulares */
+@media (max-width:768px){
+    .logo{
+        font-size: 1.1rem;gap: 10px;
+    }
+    .logo img{
+        width: 45px;height: 45px;
+    }
+}
+.container{
+    width:90%;max-width:1200px;margin:auto;
+}
+
+
+
+/* NAVBAR */
+header{
+    background:var(--white);box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;top:0;z-index:100;
+}
+
+nav{
+    display:flex;justify-content:space-between;
+    align-items:center;padding:1rem 0;
+}
+#titlenavbar{ /*Cambio de color de titulo de navbar*/
+    color: #060e6b;
+}
+
+.logo{
+    font-size:1.5rem;font-weight:bold;color:var(--primary);
+}
+
+.menu{
+    display:flex;gap:25px;
+}
+
+.menu a{
+    text-decoration:none;color:var(--dark);font-weight:500;
+}
+
+.menu a:hover{
+    color:var(--primary);
+}
+
+/* HERO */
+.hero{
+    min-height:90vh;display:flex;align-items:center;
+    justify-content:space-between;gap:50px;
+}
+
+
+.hero-content{
+    background: rgba(255,255,255,.75);
+    width:100%;
+    max-width:700px;
+    padding:40px;
+    margin:0 auto;
+    border-top-left-radius:30px;
+    border-bottom-right-radius:30px;
+}
+
+.hero-content h1{
+    font-size:3rem;line-height:1.2;margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.1rem;margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;padding:14px 28px;
+    text-decoration:none;border-radius:8px;
+    font-weight:600;transition:.3s;
+}
+
+.btn-primary{
+    background:var(--primary);color:white;
+}
+
+.btn-primary:hover{
+    background:var(--secondary);
+}
+
+.btn-outline{
+    border:2px solid var(--primary);color:var(--primary);
+    margin-left:10px;
+}
+
+.btn-outline:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* SECCIONES */
+section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.2rem;color:var(--secondary);
+}
+.section1{
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px 60px;
+    background-image:url('font1.png');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+/* SERVICIOS */
+.services{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+
+    height:250px;
+    perspective:1000px;
+    background:none;
+    box-shadow:none;
+
+}
+
+
+.card-inner{
+
+    position:relative;
+    width:100%;
+    height:100%;
+
+    transition:transform .8s;
+    transform-style:preserve-3d;
+
+}
+
+
+.card:hover .card-inner{
+
+    transform:rotateY(180deg);
+
+}
+
+
+/* CARA FRONTAL Y TRASERA */
+
+.card-front,
+.card-back{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    border-radius:15px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    backface-visibility:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+/* FRENTE */
+
+.card-front{
+
+    background:white;
+
+    text-align:center;
+
+}
+
+
+.card-front h3{
+
+    color:var(--dark);
+
+    font-size:1.4rem;
+
+}
+
+
+
+/* PARTE POSTERIOR */
+
+.card-back{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--card)
+    );
+
+    color:white;
+
+    transform:rotateY(180deg);
+
+    text-align:center;
+
+}
+
+
+.card-back p{
+
+    font-size:1.1rem;
+
+}
+
+/* BENEFICIOS */
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.benefit{
+    background:white;padding:20px;
+    border-left:5px solid var(--accent);border-radius:10px;
+}
+
+/* PROCESO */
+.process{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:white;text-align:center;
+    padding:30px;border-radius:15px;
+}
+
+.number{
+    width:60px;height:60px;margin:auto;margin-bottom:15px;
+    border-radius:50%;background:var(--primary);color:white;
+    display:flex;justify-content:center;align-items:center;
+    font-size:1.4rem;font-weight:bold;
+}
+
+/* PORTAFOLIO */
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:white;border-radius:15px;
+    overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.project img{
+    width:100%;height:220px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:20px;
+}
+
+/* CTA */
+.cta{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;text-align:center;border-radius:20px;
+    padding:70px 30px;
+}
+
+.cta h2{
+    margin-bottom:20px;
+}
+
+/* CONTACTO */
+.contact{
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+input,
+textarea{
+    margin-bottom:15px;padding:15px;
+    border:1px solid #ddd;border-radius:8px;
+}
+
+textarea{
+    min-height:140px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:var(--secondary);color:white;
+    text-align:center;padding:30px;margin-top:60px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:50px;
+    }
+
+    .hero-content h1{
+        font-size:2.2rem;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .contact{
+        grid-template-columns:1fr;
+    }
+}
