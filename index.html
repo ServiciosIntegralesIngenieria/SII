@@ -271,17 +271,19 @@
 
         <div class="contact">
 
-            <form action="https://formsubmit.co/serviciosintegrales.attc@gmail.com" method="POST">
+            <form 
+                action="https://formsubmit.co/serviciosintegrales.attc@gmail.com"  method="POST">
                 <label>Nombre Completo:</label>
-                <input type="text" placeholder="Nombre" required>
+                <input type="text" name="nombre" placeholder="Nombre" required>
                 <label>Email:</label>
-                <input type="email" placeholder="Correo electrónico" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
                 <label>Teléfono de contacto:</label>
-                <input type="text" placeholder="Teléfono" required>
+                <input type="text" name="telefono" placeholder="Teléfono" required>
                 <label>Mensaje:</label>
-                <textarea placeholder="Cuéntame sobre tu proyecto" required></textarea>
+                <textarea name="message" placeholder="Cuéntame sobre tu proyecto" required></textarea>
                 <input type="hidden" name="_subject"  value="Nuevo mensaje desde la página web ">
                 <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_netx" value="https://serviciosintegralesingenieria.github.io/SII/">
                 <button  type="submit" class="btn btn-primary">
                     Enviar Mensaje
                 </button>
